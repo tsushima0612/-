@@ -1,0 +1,10 @@
+@startuml シーケンス図
+actor 田中さん
+actor 鈴木さん
+rectangle 販売管理システム{
+usecase 注文確認
+usecase 出荷状況登録
+}
+注文確認 <-- 田中さん
+出荷状況登録 <-- 鈴木さん
+@enduml

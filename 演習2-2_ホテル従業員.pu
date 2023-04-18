@@ -1,0 +1,5 @@
+@startuml シーケンス図
+actor ホテル従業員
+actor 経営者
+ホテル従業員 <|- 経営者
+@enduml

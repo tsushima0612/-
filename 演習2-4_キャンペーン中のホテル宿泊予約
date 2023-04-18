@@ -1,0 +1,7 @@
+@startuml シーケンス図
+rectangle ホテル予約{
+    usecase ログイン
+    usecase (<u>予約</u>\n拡張点\nキャンペーン価格) as inupt
+}
+ログイン <. inupt : <<include>>
+@enduml

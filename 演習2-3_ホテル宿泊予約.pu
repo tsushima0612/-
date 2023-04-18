@@ -1,0 +1,7 @@
+@startuml
+rectangle ホテル予約{
+    usecase ログイン
+    usecase 予約
+}
+ログイン <. 予約 : <<include>>
+@enduml
