@@ -1,0 +1,15 @@
+@startuml クラス図
+class 医師{
++診察する
++診察記録
+}
+class 患者{}
+class 医局{}
+class 診察記録{}
+
+医師 --> 診察記録:作成する
+患者 -- 診察記録
+left to right direction
+医師"1"--"*"医局:所属する >
+医師"1"--"*"患者:担当する >
+@enduml
