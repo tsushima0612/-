@@ -1,0 +1,21 @@
+@startuml 演習4-1_SD_ラーメン屋さんでの注文
+    hide footbox
+    autonumber
+    skinparam style strictuml
+
+    actor "<u>:客</u>" as customer
+    participant ":<u>フロア店員</u>" as cleark
+    participant ":<u>料理人</u>" as cook
+
+    activate customer
+        activate cleark
+            activate cook
+                customer -> cleark:ラーメンを注文する
+                cleark -> cook:調理を指示する
+                cook -> cook:調理をする
+                cleark <-- cook:ラーメン
+                customer <-- cleark:ラーメン
+            deactivate cook
+        deactivate cleark
+    deactivate customer
+@enduml

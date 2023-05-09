@@ -1,0 +1,6 @@
+@startuml 抽象化
+class animal <<abstract>>{
+    ---
+}
++ Walk():void
+@enduml
