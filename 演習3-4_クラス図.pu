@@ -1,0 +1,5 @@
+@startuml 演習3-4_クラス図
+class 車{}
+class タイヤ{}
+車 "1"<-- "4"タイヤ
+@enduml

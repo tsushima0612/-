@@ -1,0 +1,6 @@
+@startuml
+participant "利用者クラス" as user
+participant "予約画面クラス" as reservationScreen
+user -> reservationScreen : ログインメッセージ (非同期)
+reservationScreen -> reservationScreen : 確認操作（認証）(同期)
+@enduml

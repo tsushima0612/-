@@ -1,0 +1,19 @@
+@startuml 演習4-3_SD_データ更新コントローラとホテルと予約
+participant "データ更新コントローラクラス" as controller
+participant "ホテルクラス" as hotel
+participant "予約オブジェクト" as reservation
+
+controller -> hotel: 予約操作を呼び出す
+activate controller
+activate hotel
+
+hotel -> reservation: 予約オブジェクトを作成する
+activate reservation
+
+hotel -> hotel: 予約登録操作を呼び出す
+activate hotel
+
+deactivate hotel
+deactivate reservation
+deactivate controller
+@enduml
