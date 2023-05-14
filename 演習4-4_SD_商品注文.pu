@@ -1,0 +1,22 @@
+@startuml 演習4-4_SD_商品注文
+actor 受注係
+boundary 注文登録画面 
+entity 商品
+
+受注係 -> 注文登録画面: 商品情報確認()
+activate 注文登録画面
+
+activate 注文登録画面
+注文登録画面 -> 商品: 商品情報取得()
+activate 商品
+商品 --> 注文登録画面: 商品情報
+deactivate 商品
+
+注文登録画面 -> 注文登録画面: 商品登録(注文情報)
+activate 注文登録画面
+注文登録画面 -> 注文: 注文オブジェクトを生成する
+activate 注文
+deactivate 注文
+注文登録画面 --> 受注係: 注文完了
+deactivate 注文登録画面
+@enduml
