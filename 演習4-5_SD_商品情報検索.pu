@@ -1,0 +1,29 @@
+@startuml 演習4-5_SD_商品情報検索
+actor "<u>:会員</u>" as person
+participant "<<boundary>>\n:<u>商品検索画面</u>" as boundary
+participant "<<control>>\n<u>商品検索コントローラー</u>" as control
+
+mainframe sd 商品検索
+    activate person
+    person -> boundary:商品検索(商品番号)
+    activate boundary
+        boundary -> control:商品検索(商品番号)
+        activate control
+            create "<<entity>>\n<u>商品</u>" as product
+            control --> product:<<create>>生成()
+            loop 商品カテゴリー数
+                create "<<entity>>/n:<u>商品カテゴリー</u>" as category
+                control --> category:<<create>>生成()
+                control -> product:商品カテゴリ設定()
+                activate product
+                deactivate product
+            end loop
+            boundary <-- control:商品情報
+            boundary -> boundary:商品情報表示(商品情報)
+            activate boundary
+            deactivate boundary
+        deactivate control
+    deactivate boundary
+deactivate person
+@enduml
+

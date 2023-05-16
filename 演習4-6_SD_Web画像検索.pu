@@ -1,0 +1,20 @@
+@startuml 演習4-6_SD_Web画像検索
+actor ":<u>ユーザー</u>" as person
+participant ":<u>ブラウザ</u>" as browser
+participant ":<u>webサーバー</u>" as web
+participant ":<u>画像サーバー</u>" as image
+
+activate person
+    person -> browser:画像のリンクボタンを押す
+    activate browser
+        browser -> web:画像のファイル名送信
+        activate web
+        web -> image:画像検索
+        activate image
+            image -> web:閲覧可能状態にする
+            deactivate image
+        browser <- web:画像ファイル再生
+        deactivate web
+    deactivate browser
+deactivate person 
+@enduml
