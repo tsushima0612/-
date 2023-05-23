@@ -1,0 +1,11 @@
+@startuml 演習6-2_SD_部屋オブジェクト
+state 未使用{
+    state 空室
+    state 予約済
+}
+state 使用中
+空室 -right-> 予約済: 予約
+空室 <-- 予約済: キャンセル
+予約済 -down-> 使用中: 使用
+使用中 -up-> 空室: 使用完了
+@enduml
