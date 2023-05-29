@@ -1,0 +1,15 @@
+@startuml 演習6-4-3_シーケンス図_自動販売機
+hide footbox
+participant ":客" as cos
+participant ":料金装置" as pri
+participant ":ボタン" as but
+participant ":ベンダー装置" as ben
+activate cos
+    activate pri
+        cos --> pri: 料金を入れる
+    activate but
+        cos --> but: ボタンを押す
+    activate ben
+        cos <-- ben: ドリンクを出す
+
+@enduml
