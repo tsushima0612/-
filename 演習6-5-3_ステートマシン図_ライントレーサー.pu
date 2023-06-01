@@ -1,0 +1,14 @@
+@startuml ステートマシン図
+state 電源swON{
+    state entry
+    state 右旋回
+    state 左旋回
+    entry -down-> 右旋回: 光センサーが暗いと判断
+    entry <-up- 右旋回: センサーが明るいと判断
+    entry -down-> 左旋回: 光センサーが明るいと判断
+    entry <-up- 左旋回: 光センサーが暗いと判断
+}
+state 電源swOFF
+電源swON <-- 電源swOFF: 電源を付ける
+電源swON --> 電源swOFF: 電源を切る
+@enduml

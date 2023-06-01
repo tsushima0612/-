@@ -1,0 +1,16 @@
+@startuml ユースケース図
+left to right direction
+actor ユーザー
+actor 光センサー
+usecase 電源スイッチを付ける
+usecase 暗いと判断
+usecase 明るいと判断
+usecase 右モータoff左モータon
+usecase 右モータon左モータoff
+
+ユーザー --> 電源スイッチを付ける
+光センサー --> 暗いと判断
+暗いと判断 --> 右モータoff左モータon:<<include>>
+光センサー --> 明るいと判断
+明るいと判断 --> 右モータon左モータoff:<<include>>
+@enduml
